@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENTYSALUD · creando sonrisas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    </head>
+
+<body>
+    <!-- MENÚ CON LOGO -->
+    <nav class="menu-bar" id="inicio">
+        <div class="logo-container">
+            <img class="logo-img"
+                src="https://lh3.googleusercontent.com/pw/AP1GczP854gxSdiFQU28MSbiQRLRWs2xss7PtrX5P5UaeBVSokiY6EvDCkuyqNRAQaNU-O86tRoc5cMKQUoC4VrOEY040Sm_slHZXiMwmBZTT-3Blm4jgIPR1G2OZxI8FtgI8eKuschTWWMtsq4jxar2MnMM=w900-h306-s-no-gm?authuser=0"
+                alt="DENTYSALUD - creando sonrisas">
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-btn" data-target="inicio"><i class="fa-regular fa-calendar-check"></i> Inicio</button>
+            <button class="nav-btn" data-target="servicios"><i class="fa-solid fa-tooth"></i> Servicios</button>
+            <button class="nav-btn" data-target="especialistas"><i class="fa-regular fa-smile"></i>
+                Especialistas</button>
+            <button class="nav-btn" data-target="tecnologia"><i class="fa-solid fa-microscope"></i> Tecnología</button>
+            <button class="nav-btn" data-target="sedes"><i class="fa-solid fa-location-dot"></i> Sedes</button>
+            <button class="nav-btn" data-target="admin" id="adminBtn"><i class="fa-solid fa-user-tie"></i>
+                Admin</button>
+        </div>
+    </nav>
+
+    <!-- MODAL PARA VALIDACIÓN DE ADMIN -->
+    <div class="modal-overlay" id="adminModal">
+        <div class="modal-container">
+            <h3><i class="fa-solid fa-lock"></i> Acceso Admin</h3>
+            <p>Ingresa la contraseña para acceder al panel de administración</p>
+            <input type="password" id="adminPassword" placeholder="Contraseña" autocomplete="off">
+            <div class="error-msg" id="modalError"></div>
+            <div class="modal-buttons">
+                <button class="btn-confirm" id="confirmAdmin">Ingresar</button>
+                <button class="btn-cancel" id="cancelAdmin">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-content" id="mainContent">
+        <header class="hero-banner" id="hero">
+            <div class="hero-contenido">
+                <div class="hero-texto">
+                    <h1>LA CLÍNICA DENTAL<br>QUE CREA SONRISAS</h1>
+                    <div class="highlight">Especializada en implantes, ortodoncia y estética dental.</div>
+                    <p>Vive la experiencia de visitar al dentista de forma cómoda y agradable.</p>
+                    <span class="badge"><i class="fa-regular fa-calendar-check"></i> Agenda tu cita</span>
+                </div>
+                <div class="hero-imagen">
+                    <div class="circulo-calidad">
+                        <span>+5</span>
+                        <p>años de<br>experiencia</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- SECCIÓN SERVICIOS -->
+            <section id="servicios" class="servicios-seccion">
+                <h2><i class="fa-solid fa-tooth"></i> Nuestros Servicios</h2>
+                <div class="servicios-grid">
+                    <div class="servicio-card"><i class="fa-solid fa-microscope"></i>
+                        <h3>Implantes Dentales</h3>
+                        <p>Recupera la funcionalidad y estética con implantes de última generación.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-solid fa-face-smile"></i>
+                        <h3>Ortodoncia invisible</h3>
+                        <p>Tratamientos sin brackets: Invisalign y más.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-regular fa-gem"></i>
+                        <h3>Carillas y Estética</h3>
+                        <p>Diseño de sonrisa, carillas y blanqueamiento.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-solid fa-x-ray"></i>
+                        <h3>Diagnóstico digital</h3>
+                        <p>Tecnología 3D para tratamientos precisos.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-solid fa-microscope"></i>
+                        <h3>Endodoncia</h3>
+                        <p>Tratamiento de conductos indoloro y eficaz.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-solid fa-face-smile"></i>
+                        <h3>Periodoncia</h3>
+                        <p>Tratamiento de encías para salud integral.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-regular fa-gem"></i>
+                        <h3>Blanqueamiento</h3>
+                        <p>Sonríe con confianza con nuestro sistema avanzado.</p>
+                    </div>
+                    <div class="servicio-card"><i class="fa-solid fa-x-ray"></i>
+                        <h3>Odontopediatría</h3>
+                        <p>Cuidado especial para los más pequeños.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NUEVA SECCIÓN ESPECIALISTAS - DIRECTION-AWARE 3D -->
+            <section id="especialistas" class="servicios-seccion">
+                <h2><i class="fa-regular fa-smile"></i> Nuestros Especialistas</h2>
+                <ul class="especialistas-grid-3d" id="especialistasList3D">
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-1"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dra. Ana María Rojas</h3>
+                            <p>Ortodoncista · 10 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-2"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dr. Carlos Paredes</h3>
+                            <p>Implantólogo · 500+ casos</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-3"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dra. Lucía Fernández</h3>
+                            <p>Odontopediatra · 8 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-4"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dr. Miguel Ángel</h3>
+                            <p>Cirujano Oral · 12 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-5"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dra. Patricia Soto</h3>
+                            <p>Periodoncista · 6 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-6"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dr. Javier Mendoza</h3>
+                            <p>Endodoncista · 9 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-7"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dra. Claudia Reyes</h3>
+                            <p>Estética Dental · 7 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-8"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dr. Roberto Díaz</h3>
+                            <p>Rehabilitador Oral · 11 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-9"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dra. Sofía Ramírez</h3>
+                            <p>Ortodoncista · 10 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-10"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dr. Andrés Castillo</h3>
+                            <p>Implantólogo · 500+ casos</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-11"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dra. Valeria Méndez</h3>
+                            <p>Odontopediatra · 8 años</p>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="normal" href="#">
+                            <div class="bg-img bg-12"></div>
+                        </a>
+                        <div class="info">
+                            <h3>Dr. Fernando Ortega</h3>
+                            <p>Cirujano Oral · 12 años</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- SECCIÓN TECNOLOGÍA -->
+            <section id="tecnologia" class="servicios-seccion">
+                <h2><i class="fa-solid fa-microscope"></i> Tecnología de Vanguardia</h2>
+                <div class="tecnologia-panel">
+                    <div class="tecnologia-slider-moderno">
+                        <div class="slider-main" id="techSlider">
+                            <div class="slide active" data-slide="0">
+                                <div class="slide-content">
+                                    <h3>Radiología Digital 3D</h3>
+                                    <p>Obtén imágenes de alta precisión con un 90% menos de radiación. Nuestro tomógrafo
+                                        Cone Beam permite diagnósticos exactos.</p>
+                                    <div class="slide-tags"><span class="slide-tag">Precisión 3D</span><span
+                                            class="slide-tag pink">Baja radiación</span></div>
+                                </div>
+                                <div class="slide-image"><img
+                                        src="https://images.pexels.com/photos/3845645/pexels-photo-3845645.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                        alt="Radiología 3D"></div>
+                            </div>
+                            <div class="slide" data-slide="1">
+                                <div class="slide-content">
+                                    <h3>Escáner Intraoral</h3>
+                                    <p>Olvídate de las pastillas de impresión. En minutos obtenemos un modelo digital
+                                        preciso de tu boca.</p>
+                                    <div class="slide-tags"><span class="slide-tag">Sin molestias</span><span
+                                            class="slide-tag pink">Precisión digital</span></div>
+                                </div>
+                                <div class="slide-image"><img
+                                        src="https://images.pexels.com/photos/7659445/pexels-photo-7659445.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                        alt="Escáner Intraoral"></div>
+                            </div>
+                            <div class="slide" data-slide="2">
+                                <div class="slide-content">
+                                    <h3>Diseño de Sonrisa Digital</h3>
+                                    <p>Visualiza tu nueva sonrisa antes del tratamiento. Simulamos en 3D el resultado
+                                        final.</p>
+                                    <div class="slide-tags"><span class="slide-tag">Simulación 3D</span><span
+                                            class="slide-tag pink">Resultado previo</span></div>
+                                </div>
+                                <div class="slide-image"><img
+                                        src="https://images.pexels.com/photos/3845625/pexels-photo-3845625.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                        alt="Diseño Sonrisa"></div>
+                            </div>
+                            <div class="slide" data-slide="3">
+                                <div class="slide-content">
+                                    <h3>Láser Dental</h3>
+                                    <p>Tratamientos sin dolor ni sangrado. Ideal para cirugía de encías y recuperación
+                                        rápida.</p>
+                                    <div class="slide-tags"><span class="slide-tag">Sin dolor</span><span
+                                            class="slide-tag pink">Recuperación rápida</span></div>
+                                </div>
+                                <div class="slide-image"><img
+                                        src="https://images.pexels.com/photos/6627252/pexels-photo-6627252.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                        alt="Láser Dental"></div>
+                            </div>
+                        </div>
+                        <div class="tecnologia-indicadores" id="techIndicators">
+                            <div class="indicador-item active" data-target="0"><i
+                                    class="fa-solid fa-x-ray"></i><span>Radiología 3D</span>
+                                <div class="indicador-progress"></div>
+                            </div>
+                            <div class="indicador-item" data-target="1"><i class="fa-solid fa-camera"></i><span>Escáner
+                                    Intraoral</span>
+                                <div class="indicador-progress"></div>
+                            </div>
+                            <div class="indicador-item" data-target="2"><i class="fa-regular fa-gem"></i><span>Diseño
+                                    Sonrisa</span>
+                                <div class="indicador-progress"></div>
+                            </div>
+                            <div class="indicador-item" data-target="3"><i class="fa-solid fa-bolt"></i><span>Láser
+                                    Dental</span>
+                                <div class="indicador-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN SEDES -->
+            <section id="sedes" class="sedes-seccion">
+                <h2><i class="fa-solid fa-location-dot"></i> Nuestras Sedes</h2>
+                <div class="sedes-container">
+                    <div class="listbox-sedes">
+                        <label for="sede-select"><i class="fa-regular fa-building" style="color:#f472b6;"></i> Elige una
+                            sede:</label>
+                        <select id="sede-select" onchange="actualizarMapa()">
+                            <option value="miraflores">🏥 Sede Miraflores</option>
+                            <option value="sanisidro">🏥 Sede San Isidro</option>
+                            <option value="santiburgo">🏥 Sede Surco</option>
+                            <option value="larcomar">🏥 Sede Larcomar</option>
+                        </select>
+                        <div class="direccion-info" id="direccion-texto"><i class="fa-regular fa-map"></i> Av. José
+                            Pardo 450, Miraflores</div>
+                    </div>
+                    <div class="mapa-container">
+                        <iframe id="mapa-iframe"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.972123456789!2d-77.028685!3d-12.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8b3e1234567%3A0x123456789abcdef!2sAv.%20Jos%C3%A9%20Pardo%20450%2C%20Miraflores%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1234567890"
+                            allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ADMIN (HTML 2) -->
+    <div class="admin-container" id="adminContainer">
+        <div class="carpetas-grid">
+            <div class="carpeta" data-sede="1" onclick="seleccionarSedeAdmin('1')"><i class="fa-regular fa-folder"></i>
+                <h3>Sede Miraflores</h3>
+                <p class="sede-conteo" id="conteo-1">Cargando...</p>
+            </div>
+            <div class="carpeta" data-sede="2" onclick="seleccionarSedeAdmin('2')"><i class="fa-regular fa-folder"></i>
+                <h3>Sede San Isidro</h3>
+                <p class="sede-conteo" id="conteo-2">Cargando...</p>
+            </div>
+            <div class="carpeta" data-sede="3" onclick="seleccionarSedeAdmin('3')"><i class="fa-regular fa-folder"></i>
+                <h3>Sede Surco</h3>
+                <p class="sede-conteo" id="conteo-3">Cargando...</p>
+            </div>
+            <div class="carpeta" data-sede="4" onclick="seleccionarSedeAdmin('4')"><i class="fa-regular fa-folder"></i>
+                <h3>Sede Larcomar</h3>
+                <p class="sede-conteo" id="conteo-4">Cargando...</p>
+            </div>
+        </div>
+        <div class="archivos-seccion">
+            <div class="archivos-header">
+                <h2><i class="fa-regular fa-files"></i> <span id="sede-nombre-admin">Miraflores</span></h2><span
+                    class="sede-tag" id="sede-tag-admin">📍 Sede Miraflores</span>
+            </div>
+            <div class="archivos-grid" id="archivos-grid-admin">
+                <div class="loading"><i class="fa-solid fa-spinner fa-spin-pulse"></i>
+                    <p>Cargando documentos...</p>
+                </div>
+            </div>
+        </div>
+        <div class="visor-documento" id="visor-documento-admin">
+            <div class="visor-header">
+                <h3><i class="fa-regular fa-file" id="visor-icono-admin"></i> <span
+                        id="documento-titulo-admin">Documento</span></h3><button class="btn-cerrar"
+                    onclick="cerrarVisorAdmin()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <iframe class="visor-frame" id="visor-frame-admin" src="" title="Visor de documento"
+                allow="fullscreen"></iframe>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-contenido">
+            <div class="footer-col">
+                <h3>Información legal</h3>
+                <ul>
+                    <li><a href="#"><i class="fa-regular fa-circle-question"></i> Preguntas frecuentes</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file-lines"></i> Libro de reclamaciones</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file-contract"></i> Términos y condiciones</a></li>
+                    <li><a href="#"><i class="fa-regular fa-shield"></i> Políticas de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Horarios</h3>
+                <p><i class="fa-regular fa-clock" style="color:#f472b6;"></i> Lun-Vie: 9:00 – 20:00</p>
+                <p><i class="fa-regular fa-clock" style="color:#f472b6;"></i> Sáb: 9:00 – 14:00</p>
+                <p><i class="fa-regular fa-bell" style="color:#f472b6;"></i> Urgencias: 987 654 321</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto por Sedes</h3>
+                <div class="contacto-sede-selector"><select id="contacto-sede-select"
+                        onchange="actualizarTelefonoContacto()">
+                        <option value="1">🏥 Sede Miraflores</option>
+                        <option value="2">🏥 Sede San Isidro</option>
+                        <option value="3">🏥 Sede Surco</option>
+                        <option value="4">🏥 Sede Larcomar</option>
+                    </select>
+                    <div class="contacto-telefono-box" id="contacto-telefono-info">
+                        <p><i class="fa-solid fa-phone"></i> +51 987 654 321</p>
+                        <p><i class="fa-solid fa-phone"></i> +51 987 654 322</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <div class="redes-sociales"><a href="#"><i class="fa-brands fa-facebook"></i></a><a href="#"><i
+                            class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-tiktok"></i></a><a
+                        href="#"><i class="fa-brands fa-whatsapp"></i></a></div>
+                <p style="margin-top:1rem;"><i class="fa-regular fa-heart" style="color:#f472b6;"></i> #CreandoSonrisas
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 DENTYSALUD · creando sonrisas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="javascript.js"></script>
+</body>
+</html>
