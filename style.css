@@ -1,4 +1,4 @@
- /* ===== ESTILOS DEL MODAL PARA VALIDACIÓN ===== */
+/* ===== ESTILOS DEL MODAL PARA VALIDACIÓN ===== */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -1379,14 +1379,14 @@
 
         .especialistas-grid-3d li h3 {
             margin: 0;
-            font-size: 16px;
+            font-size: 1rem;
             color: rgba(255, 255, 255, 0.9);
+            padding: 5.5rem 1rem 0 1rem;
         }
 
-        .especialistas-grid-3dli p {
-            font-size: 12px;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.8);
+        .especialistas-grid-3d li p {
+            font-weight: 500;
+            font-size: 0.8rem;
         }
 
         .especialistas-grid-3d li .normal {
@@ -1404,7 +1404,6 @@
             transform: rotate3d(1, 0, 0, 90deg);
             width: 100%;
             height: 100%;
-            padding: 6rem 1rem;
             position: absolute;
             top: 0;
             left: 0;
@@ -1706,8 +1705,8 @@
                 perspective: 440px;
             }
 
-            .info {
-                padding: 4rem 1rem;
+            .especialistas-grid-3d li h3 {
+                padding: 4.5rem 1rem 0 1rem;
             }
         }
 
@@ -1750,12 +1749,12 @@
                 perspective: 400px;
             }
 
-            .info h3 {
-                font-size: 14px;
+            .especialistas-grid-3d li h3 {
+                padding: 4.5rem 1rem 0 1rem;
             }
 
             .info p {
-                font-size: 10px;
+                font-weight: 700;
             }
         }
 
@@ -1800,12 +1799,8 @@
                 perspective: 360px;
             }
 
-            .info {
-                padding: 3rem 0.8rem;
-            }
-
-            .info h3 {
-                font-size: 12px;
+            .especialistas-grid-3d li h3 {
+                padding: 4rem 1rem 0 1rem;
                 margin-top: 0;
             }
 
@@ -1908,8 +1903,10 @@
                 perspective: 380px;
             }
 
-            .info {
-                padding: 2.5rem 0.5rem;
+            .especialistas-grid-3d li h3 {
+                font-weight: 500;
+                margin-top: 0;
+                padding: 4.5rem 1rem 0 1rem;
             }
 
             .slider-main {
@@ -2116,16 +2113,9 @@
                 perspective: 340px;
             }
 
-            .info {
-                padding: 1.5rem 0.5rem;
-            }
-
-            .info h3 {
-                font-size: 11px;
-            }
-
-            .info p {
-                font-size: 9px;
+            .especialistas-grid-3d li h3 {
+                padding: 3rem 1rem 0 1rem;
+                font-weight: 700;
             }
 
             .slide {
@@ -2382,16 +2372,9 @@
                 perspective: 320px;
             }
 
-            .info {
-                padding: 1rem 0.3rem;
-            }
-
-            .info h3 {
-                font-size: 10px;
-            }
-
-            .info p {
-                font-size: 8px;
+            .especialistas-grid-3d li h3 {
+                padding: 2.5rem 1rem 0 1rem;
+                font-weight: 700;
             }
 
             .nav-btn {
@@ -2598,13 +2581,8 @@
                 perspective: 300px;
             }
 
-            .info {
-                padding: 0.8rem 0.2rem;
-            }
-
             .info h3 {
                 font-size: 9px;
-                margin-bottom: 0.2rem;
             }
 
             .info p {
